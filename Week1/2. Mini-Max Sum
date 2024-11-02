@@ -1,0 +1,19 @@
+class Result {
+    public static void miniMaxSum(List<Integer> arr) {
+        long totalSum = 0, min = Long.MAX_VALUE, max = Long.MIN_VALUE;
+        
+        for (int num : arr) {
+            totalSum += num;
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+        
+        System.out.print((totalSum - max) + " " + (totalSum - min));
+
+    }
+
+}
