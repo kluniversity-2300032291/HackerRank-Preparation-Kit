@@ -1,0 +1,28 @@
+class Result {
+
+    /*
+     * Complete the 'timeConversion' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static String timeConversion(String s) {
+        // Write your code here
+        String[] sc = s.split(":");
+        int hour = Integer.parseInt(sc[0]);
+        String minutes = sc[1];
+        String seconds = sc[2].substring(0, 2);
+        char period = sc[2].charAt(2);
+        if (period == 'P') {
+            if (hour != 12) {
+                hour += 12;
+            }
+        } else { 
+            if (hour == 12) {
+                hour = 0;
+            }
+        }
+        return String.format("%02d:%s:%s", hour, minutes, seconds);
+    }
+}
