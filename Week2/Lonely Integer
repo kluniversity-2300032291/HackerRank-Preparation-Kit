@@ -1,0 +1,23 @@
+class Result {
+
+    /*
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY a as parameter.
+     */
+
+    public static int lonelyinteger(List<Integer> a) {
+        // Write your code here
+        Collections.sort(a);
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int n : a) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+        for (int key : map.keySet()) {
+            if (map.get(key) == 1) {
+                return key;
+            }
+        }
+        return -1;
+    }
+}
